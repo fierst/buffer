@@ -229,7 +229,7 @@ buffer_prepend(buffer_t *self, char *str) {
 
   // move
   move:
-  memmove(self->data + len, self->data, len + 1);
+  memmove(self->data + len, self->data, self->len);
   memcpy(self->data, str, len);
 
   return 0;

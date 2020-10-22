@@ -76,10 +76,10 @@ test_buffer_append__grow() {
 void
 test_buffer_prepend() {
   buffer_t *buf = buffer_new();
-  assert(0 == buffer_append(buf, " World"));
+  assert(0 == buffer_append(buf, " World!"));
   assert(0 == buffer_prepend(buf, "Hello"));
-  assert(strlen("Hello World") == buffer_length(buf));
-  equal("Hello World", buffer_string(buf));
+  assert(strlen("Hello World!") == buffer_length(buf));
+  equal("Hello World!", buffer_string(buf));
   buffer_free(buf);
 }
 
